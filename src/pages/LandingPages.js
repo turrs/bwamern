@@ -12,8 +12,11 @@ export default class LandingPages extends Component {
     super(props);
     this.refMostPicked = React.createRef();
   }
+  componentDidMount() {
+    window.title = "Landing Page";
+    window.scrollTo(0, 0);
+  }
   render() {
-    console.log(this.props);
     return (
       <>
         <Header {...this.props}></Header>

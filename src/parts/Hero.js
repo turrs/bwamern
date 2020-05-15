@@ -42,7 +42,7 @@ export default function Hero(props) {
                   width="36px"
                   height="36px"
                   src={ImageTraveller}
-                  alt="{`${props.data.travelers} travelers `}"
+                  alt={`${props.data.travelers} Travelers`}
                 />
                 <h6 className="mt-3">
                   {numberFormat(props.data.travelers)}
@@ -56,7 +56,7 @@ export default function Hero(props) {
                   width="36px"
                   height="36px"
                   src={ImageService}
-                  alt="{`${props.data.service} service `}"
+                  alt={`${props.data.service} service `}
                 />
                 <h6 className="mt-3">
                   {numberFormat(props.data.service)}
@@ -70,7 +70,7 @@ export default function Hero(props) {
                   width="36px"
                   height="36px"
                   src={ImageBedroom}
-                  alt="{`${props.data.bedroom} bedroom `}"
+                  alt={`${props.data.bedroom} bedroom `}
                 />
                 <h6 className="mt-3">
                   {numberFormat(props.data.bedroom)}

@@ -17,7 +17,11 @@ export default function Categories({ data }) {
             ) : (
               category.items.map((item, index2) => {
                 return (
-                  <Fade bottom delay={300 * index2}>
+                  <Fade
+                    key={`category-${index1}-item-${index2}`}
+                    bottom
+                    delay={300 * index2}
+                  >
                     <div
                       className="item column-3 row-1"
                       key={`category-${index1}-item-${index2}`}

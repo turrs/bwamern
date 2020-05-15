@@ -61,7 +61,6 @@ header {
   border-bottom: 1px solid $gray-200;
   width: 100%;
   position: relative;
-  margin-bottom: 50px;
 
   .navbar {
     height: 80px;
@@ -108,8 +107,11 @@ header {
 }
 
 .card {
-  height: 100%;
-  border-radius: 20px;
+  &.bordered {
+    border: 1px solid $gray-200;
+  }
+
+  border-radius: 15px;
 
   .tag {
     z-index: 3;
@@ -144,7 +146,7 @@ header {
     }
 
     span {
-      font-size: .875rem;
+      font-size: 0.875rem;
     }
   }
 
@@ -162,9 +164,49 @@ header {
       right: 0;
       bottom: 0;
       transform: scale(1.1);
-      transition: .5s transform ease-in-out;
+      transition: 0.5s transform ease-in-out;
       z-index: 2;
-      @include gradient-y(rgba($black, 0), rgba($black, .51), 0%, 100%)
+      @include gradient-y(rgba($black, 0), rgba($black, 0.51), 0%, 100%);
+    }
+
+    &.card-featured {
+      overflow: hidden;
+      cursor: pointer;
+      height: 100%;
+      border-radius: 15px;
+
+      &:after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transform: scale(1.1);
+        transition: 0.5s transform ease-in-out;
+        z-index: 2;
+        @include gradient-y(rgba($black, 0), rgba($black, 0.51), 0%, 100%);
+      }
+    }
+
+    &.card-featured-travel {
+      overflow: hidden;
+      cursor: pointer;
+      height: 100%;
+      border-radius: 15px;
+
+      &:after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transform: scale(1.1);
+        transition: 0.5s transform ease-in-out;
+        z-index: 2;
+        @include gradient-y(rgba($black, 0), rgba($black, 0.51), 0%, 100%);
+      }
     }
 
     .img-wrapper {
@@ -176,7 +218,7 @@ header {
       right: 0;
       top: 0;
       transform: scale(1.1);
-      transition: .25% transform ease-in-out;
+      transition: 0.25% transform ease-in-out;
       border-radius: $border-radius;
     }
 
@@ -189,7 +231,7 @@ header {
       bottom: 0;
       width: 100%;
       transform: translate(0);
-      transition: .3s transform ease-in-out;
+      transition: 0.3s transform ease-in-out;
       display: flex;
       justify-content: flex-end;
       flex-direction: column;
@@ -256,4 +298,6 @@ main {
     color: $gray-500;
     font-weight: 300;
   }
+
+  margin-top: 20px;
 }
