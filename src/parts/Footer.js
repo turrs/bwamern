@@ -14,7 +14,7 @@ export default function Footer() {
             </p>
           </div>
           <div className="col-auto mr-5">
-            <h6 className="mt-2">For Beinners</h6>
+            <h6 className="mt-2">For Beginners</h6>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">
                 <Button type="link" href="/register">
