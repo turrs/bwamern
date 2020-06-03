@@ -52,9 +52,13 @@ class BookingForm extends Component {
         startDate.setDate(startDate.getDate() + +data.duration - 1)
       );
       this.setState({
-        date: {
-          ...this.state.data.date,
-          endDate: endDate,
+        ...this.state,
+        data: {
+          ...this.state.data,
+          date: {
+            ...this.state.data.date,
+            endDate: endDate,
+          },
         },
       });
     }
@@ -76,7 +80,7 @@ class BookingForm extends Component {
   render() {
     const { data } = this.state;
     const { itemDetails, startBooking } = this.props;
-
+    console.log(data);
     return (
       <div className="card bordered" style={{ padding: "60px 80px" }}>
         <h4 className="mb-3">Start Booking</h4>
@@ -87,9 +91,7 @@ class BookingForm extends Component {
           </span>
         </h5>
 
-        <label htmlFor="duration">
-          <span className="text-gray-800">How long you will stay?</span>
-        </label>
+        <label htmlFor="duration">How long you will stay?</label>
         <InputNumber
           max={30}
           suffix={" night"}
@@ -99,9 +101,7 @@ class BookingForm extends Component {
           value={data.duration}
         />
 
-        <label htmlFor="date">
-          <span className="text-gray-800">Pick a date</span>
-        </label>
+        <label htmlFor="date">Pick a date</label>
         <InputDate onChange={this.updateData} name="date" value={data.date} />
 
         <h6
@@ -109,11 +109,11 @@ class BookingForm extends Component {
           style={{ marginBottom: 40 }}
         >
           You will pay{" "}
-          <span className="text-gray-800">
+          <span className="text-gray-900">
             ${itemDetails.price * data.duration} USD
           </span>{" "}
           per{" "}
-          <span className="text-gray-800">
+          <span className="text-gray-900">
             {data.duration} {itemDetails.unit}
           </span>
         </h6>
@@ -125,7 +125,7 @@ class BookingForm extends Component {
           isBlock
           onClick={this.startBooking}
         >
-          <span className="text-gray-100">Continue to Book</span>
+          Continue to Book
         </Button>
       </div>
     );

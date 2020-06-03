@@ -1,26 +1,25 @@
 import React, { Component } from "react";
-import landingPages from "json/landingPage.json";
 import InputDate from "elements/Form/InputDate";
-import ItemDetails from "json/itemDetails.json";
-import BookingForm from "parts/BookingForm";
-import MostPicked from "parts/MostPicked";
 export default class Example extends Component {
+  state = {
+    value: {
+      startDate: new Date(),
+      endDate: new Date(),
+      key: "selection",
+    },
+  };
+  handleChange = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
   render() {
-    const breadcrumb = [
-      { pageTitle: "Home", pageHref: "" },
-      { pageTitle: "House Details", pageHref: "" },
-    ];
-
     return (
       <div className="container">
-        <div className="col-auto">
-          <div className="col-5" style={{ marginTop: 20 }}>
-            <MostPicked
-              refMostPicked={this.refMostPicked}
-              data={landingPages.mostPicked}
-            />
-          </div>
-        </div>
+        <InputDate
+          max={30}
+          onChange={this.handleChange}
+          name="value"
+          value={this.state.value}
+        ></InputDate>
       </div>
     );
   }
