@@ -20,17 +20,6 @@ class BookingForm extends Component {
       },
     };
   }
-
-  updateData = (e) => {
-    this.setState({
-      ...this.state,
-      data: {
-        ...this.state.data,
-        [e.target.name]: e.target.value,
-      },
-    });
-  };
-
   componentDidUpdate(prevProps, prevState) {
     const { data } = this.state;
 
@@ -63,6 +52,15 @@ class BookingForm extends Component {
       });
     }
   }
+  updateData = (e) => {
+    this.setState({
+      ...this.state,
+      data: {
+        ...this.state.data,
+        [e.target.name]: e.target.value,
+      },
+    });
+  };
 
   startBooking = () => {
     const { data } = this.state;
